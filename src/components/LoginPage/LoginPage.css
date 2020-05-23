@@ -1,0 +1,15 @@
+
+
+.login-page
+{
+  width: 70%;
+  height: 50%;
+  margin-left: 11%;
+  margin-top: 6%;
+  background-color: lightblue;
+}
+
+.form-label
+{
+  font-weight: 600;
+}

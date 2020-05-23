@@ -1,0 +1,23 @@
+
+
+.back-pic
+{
+	/*background-image: url("./images/mario.png");*/
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	opacity: 0.4;
+	background-size: cover;
+	height: 200px;
+	/* margin-top: 3%; */
+	/* height: 12%; */
+}
+
+@media only screen and (max-width: 360px){
+
+	.back-pic{
+		left: 0;
+		background-position: right;
+		margin-top: 3%;
+	}
+}

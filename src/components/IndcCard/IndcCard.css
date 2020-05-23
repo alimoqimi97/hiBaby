@@ -1,0 +1,37 @@
+
+
+
+.indc-card-image
+{
+  width: 43%;
+  /* margin-left: 28%; */
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  margin-top: 3%;
+  margin-right: 29%;
+}
+
+.indc-title
+{
+  font-family: Zar;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+
+.indc-subtitle
+{
+  font-family: Zar;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+}
+
+.indc-description
+{
+  font-family: zar;
+  font-weight: 300;
+  font-size: 15px;
+  text-align: center;
+}

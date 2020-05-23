@@ -1,0 +1,53 @@
+
+
+.products
+{
+  width: 81%%;
+  height: 271px;
+  font-family: Zar;
+  color: black;
+  text-align: center;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: lightgrey;
+  transition: 0.6s ease;
+}
+
+.products:hover
+{
+  background-color: lightgrey;
+}
+
+.products img.prdc-img
+{
+  width: 57%;
+  margin-left: 20%;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  border-radius: 8px;
+  margin-top: 3px;
+  /* height: 20%; */
+}
+
+.products h4
+{
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.products a
+{
+  color: blue;
+  direction: rtl;
+  transition: 0.6s ease;
+}
+
+.products a:hover
+{
+  text-decoration: none;
+  color: red;
+}

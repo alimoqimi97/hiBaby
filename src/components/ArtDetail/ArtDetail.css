@@ -1,0 +1,37 @@
+
+.art-detail
+{
+  background-color: #fbfbfb;
+  border-style: solid;
+  border-color: lightgray;
+  border-radius: 8px;
+  width: 50%;
+  height: 60%;
+  margin-right: 30%;
+  margin-top: 0.6%;
+  font-size: 20px;
+  font-family: Zar;
+  color: lightslategray;
+  text-align: center;
+  border-width: 1px;
+}
+
+img.art-detail-img
+{
+  width: 50%;
+  height: 20%;
+  margin-left: 2%;
+  margin-top: 1%;
+  border-style: solid;
+  border-color: lightgray;
+  border-radius: 3px;
+  border-width: 2px;
+}
+
+p.art-detail-sizes
+{
+  font-family: Zar;
+  font-size: 15px;
+  color: black;
+
+}
