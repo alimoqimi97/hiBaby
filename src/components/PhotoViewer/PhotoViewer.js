@@ -1,11 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
-// const importAll = (r) => {
-//   return r.keys().map(r);
-// }
+// let json = require("./products-details/products-details.json");
+// console.log(json);
+
+
+// debugger;
+// let pimgs = require('require-all')({
+//   dirname: "./products-details./0",
+//   filter: /\.(png|jpe?g|svg)$/
+// });
+
+// console.log("pimgs = " + pimgs);
 
 class PhotoViewer extends React.Component
 {
@@ -16,28 +25,27 @@ class PhotoViewer extends React.Component
       productId: this.props.pId,
       productImages: []
     }
+
   }
 
   importAll = (r) => {
     return r.keys().map(r);
   }
 
-  componentDidMount(){
-    let productId = this.props.pId;
-    const imgsSource = ("./products-details/" + productId);
-    let pImgs = this.importAll(require.context(imgsSource,false , /\.(png|jpe?g|svg)$/));
-
-    // read all information of products from products-details.json file or from database .
-    
-
-    console.log(pImgs);
-
-
-  }
-
   render(){
+
     return (
       <Carousel>
+          {
+            this.state.productImages.map((elem) =>{
+              return (
+                <div>
+                    <img src={elem} />
+                    <p className="legend">legend</p>
+                </div>
+              );
+            })
+          }
       </Carousel>
     );
   }

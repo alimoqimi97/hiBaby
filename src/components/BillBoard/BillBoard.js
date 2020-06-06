@@ -17,6 +17,8 @@ function importAll(r){
 
 const Images = importAll(require.context('./images',false,/\.(png|jpe?g|svg)$/));
 
+
+
 class BillBoard extends React.Component{
 
   constructor(props){

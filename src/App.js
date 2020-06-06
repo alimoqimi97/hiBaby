@@ -10,13 +10,14 @@ import ToolBar from "./components/ToolBar/ToolBar.js";
 import "rc-footer/assets/index.css";
 // import mario from "./components/Advert/images/mario.png";
 import { BrowserRouter as Router  , Switch , Route , Link } from "react-router-dom";
-// import Home from "./components/Home/Home.js";
+import Home from "./components/Home/Home.js";
 import LoginPage from "./components/LoginPage/LoginPage.js";
+import AllArticles from "./components/AllArticles/AllArticles.js";
 
 // function importAll(r){
 //   return r.keys().map(r);
 // }
-// 
+//
 // const imgs = importAll(require.context("./products-images",false,/\.(png|jpe?g|svg)$/));
 
 
@@ -43,12 +44,18 @@ function App(){
 //                     <li>
 //                         <Link to="/login">ورود</Link>
 //                     </li>
+//                     <li>
+//                         <Link to="/allproducts">همه اجناس</Link>
+//                     </li>
 //                   </ul>
 //               </nav>
 //           </div>
 //
 //           <Switch>
 //               <Route path="/login"><LoginPage /></Route>
+//               <Route path="/allproducts">
+//                   <AllArticles />
+//               </Route>
 //               <Route path="/" ><Home /></Route>
 //           </Switch>
 //       </Router>

@@ -1,0 +1,36 @@
+
+{
+{
+  "prdcSrc": "product-source0",
+  "prdcName": "product-name0",
+  "prdcPrice": "00000",
+  "prdcId": "0",
+  "prdcSizes": [
+    "large",
+    "xlarge"
+  ],
+  "prdcColors": [
+    "brown" ,
+    "white"
+  ],
+  "prdcDescription": "product-description0"
+}
+{
+  "prdcSrc": "product-source1",
+  "prdcName": "product-name1",
+  "prdcPrice": "10000",
+  "prdcId": "1",
+  "prdcSizes": ["large","xlarge"],
+  "prdcColors": ["brown" , "white"],
+  "prdcDescription": "product-description1"
+}
+{
+  "prdcSrc": "product-source3",
+  "prdcName": "product-name3",
+  "prdcPrice": "30000",
+  "prdcId": "2",
+  "prdcSizes": ["large","xlarge"],
+  "prdcColors": ["brown" , "white"],
+  "prdcDescription": "product-description2"
+}
+}

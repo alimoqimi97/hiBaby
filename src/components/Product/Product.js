@@ -1,7 +1,8 @@
 import React from "react";
-import ArtDetail from "../ArtDetail/ArtDetail.js";
-import { BrowserRouter as Router , Link , Route , Switch  } from "react-router-dom";
+// import ArtDetail from "../ArtDetail/ArtDetail.js";
+import {  Link } from "react-router-dom";
 import { Button , ButtonGroup } from "reactstrap";
+import PropTypes from "prop-types";
 // import { matchPatch } from "react-router";
 import "./Product.css";
 
@@ -21,6 +22,8 @@ class Product extends React.Component
       prdcColors: this.props.prdcColors,
       prdcDescription: this.props.prdcDescription,
     }
+
+    console.log(this.state);
   }
 
   handleClick = () => {
@@ -56,30 +59,30 @@ class Product extends React.Component
     // }
 
     let seeDetails = null;
-    let btnTxt = "خرید";
+    let btnTxt ;
 
     if(this.props.status === "home"){
         seeDetails = <Link to="/allproducts" className="btn btn-info">مشاهده جزییات</Link>
     }
 
     if(this.props.status === "allarticles"){
-      // btnTxt = "جزییات";
-
+      btnTxt = "جزییات";
+    }else {
+      btnTxt = "خرید";
     }
 
-
-
     return(
+
       <div className="products">
           <img className="prdc-img" src={this.state.imgSrc} alt="productImage" />
-          <h4>{this.state.prdcName}</h4>
-          <p>{this.state.prdcP}</p>
-          <ButtonGroup>
-          <Button onClick={this.handleClick} color="info" >{btnTxt}</Button>
-            {
-              seeDetails
-            }
-          </ButtonGroup>
+            <h4>{this.state.prdcName}</h4>
+            <p>{this.state.prdcPrice}</p>
+            <ButtonGroup>
+            <Button onClick={this.handleClick} color="info" >{btnTxt}</Button>
+              {
+                seeDetails
+              }
+            </ButtonGroup>
       </div>
 
 
@@ -91,5 +94,12 @@ class Product extends React.Component
 Product.defaultProps = {
   status: "home"
 }
+
+// Product.propTypes = {
+//   prdcName: PropTypes.string,
+//   prdcPrice: PropTypes.string,
+//   prdcId: PropTypes.string,
+//
+// }
 
 export default Product;

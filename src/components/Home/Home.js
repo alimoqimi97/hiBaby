@@ -3,20 +3,20 @@ import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BillBoard from "../BillBoard/BillBoard.js";
 import ShopGuide from "../ShopGuide/ShopGuide.js";
-// import ToolBar from "../ToolBar/ToolBar.js";
 import Vitrin from "../Vitrin/Vitrin.js";
 import Introduction from "../Introduction/Introduction.js";
 import Advert from "../Advert/Advert.js";
-// import LoginPage from "../LoginPage/LoginPage.js";
 import Footer from "rc-footer";
 import "rc-footer/assets/index.css";
 import mario from "../Advert/images/mario.png";
+import Articles from "../Vitrin/ProductsDetails.js";
 
 function importAll(r){
   return r.keys().map(r);
 }
 
-const imgs = importAll(require.context("./products-images",false,/\.(png|jpe?g|svg)$/));
+// const imgs = importAll(require.context("./products-images",false,/\.(png|jpe?g|svg)$/));
+const imgs = importAll(require.context("../AllArticles/allproducts",false,/\.(png|jpe?g|svg)$/));
 
 class Home extends React.Component
 {
@@ -36,13 +36,28 @@ class Home extends React.Component
 
   render(){
 
-    let products = imgs.map((elem, indx) => {
-      return ({
-        prdcSrc: elem,
-        prdcName: indx + "نام محصول " ,
-        prdcDesc: "توضیحات مخصول " + indx
+    let products = [];
+    let articles = Articles;
+
+    for(let i = 0 ; i < imgs.length ; i++){
+      products.push({
+        prdcSrc: imgs[i],
+        prdcName: articles[i].productName,
+        prdcDesc: articles[i].prdcDescription,
+        prdcPrice: articles[i].prdcPrice,
+        prdcId: articles[i].prdcId,
+        prdcColors: articles[i].prdcColors,
+        prdcSizes: articles[i].prdcSizes
       });
-    });
+    }
+
+    // let products = imgs.map((elem, indx) => {
+    //   return ({
+    //     prdcSrc: elem,
+    //     prdcName: indx + "نام محصول " ,
+    //     prdcDesc: "توضیحات مخصول " + indx
+    //   });
+    // });
 
     let columns = [ {
       title: "title",
