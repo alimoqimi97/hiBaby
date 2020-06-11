@@ -31,7 +31,12 @@ img.art-detail-img
 p.art-detail-sizes
 {
   font-family: Zar;
-  font-size: 15px;
+  font-size: 18px;
   color: black;
+}
 
+@media only screen and (min-width: 360px) {
+  .art-detail{
+    margin-top: 4%;
+  }
 }

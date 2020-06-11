@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Carousel } from "react-responsive-carousel";
+import $ from "jquery";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./PhotoViewer.css";
 
 
 // let json = require("./products-details/products-details.json");
@@ -22,8 +24,8 @@ class PhotoViewer extends React.Component
     super(props);
 
     this.state = {
-      productId: this.props.pId,
-      productImages: []
+      // productId: this.props.pId,
+      // productImages: []
     }
 
   }
@@ -32,27 +34,47 @@ class PhotoViewer extends React.Component
     return r.keys().map(r);
   }
 
+  componentDidMount(){
+    // let elem = $(".carousel-root");
+    //
+    // console.log(elem);
+
+    // elem.style.cssText += "width: 50%; margin-left: 22%;";
+  }
+
   render(){
 
+    let images = this.props.productsImages;
+    let name = this.props.targetName;
+
     return (
-      <Carousel>
-          {
-            this.state.productImages.map((elem) =>{
-              return (
-                <div>
-                    <img src={elem} />
-                    <p className="legend">legend</p>
-                </div>
-              );
-            })
-          }
-      </Carousel>
+      <div className="photo-viewer">
+          <Carousel>
+            {
+              images.map((elem) =>{
+                return (
+                  <div>
+                      <img src={elem} />
+                      <p className="legend">{name}</p>
+                  </div>
+                );
+              })
+            }
+          </Carousel>
+      </div>
     );
   }
 }
 
 PhotoViewer.propTypes = {
-  pId: PropTypes.number
+  // pId: PropTypes.number
+  productsImages: PropTypes.array,
+  targetName: PropTypes.string
+}
+
+PhotoViewer.defaultProps = {
+  productsImages: [],
+  targetName: ""
 }
 
 export default PhotoViewer;

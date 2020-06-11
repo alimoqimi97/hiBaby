@@ -36,7 +36,7 @@ class ToolBar extends React.Component {
         <Router>
           <div className="ToolBar">
               <Navbar color="light" light expand="md">
-                  <NavbarBrand href="/">OnlineShopLogo</NavbarBrand>
+                  {/* <NavbarBrand href="/">OnlineShopLogo</NavbarBrand> */}
                   <NavbarToggler onClick={this.toggle} />
                   <Collapse isOpen={this.state.isOpen} navbar>
                       <Nav className="mr-auto" navbar >

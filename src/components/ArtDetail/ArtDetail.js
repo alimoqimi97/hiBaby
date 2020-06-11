@@ -45,15 +45,30 @@ class ArtDetail extends React.Component
   render(){
       let btnLbl = "خرید";
 
-      let imagesSrc = this.importAll(require.context("./",false,/\.(png|jpe?g|svg)$/));
-
       // gain the product information from out of component
       let info = this.props.artInfo;
+      let wrng = null;
+
+      //      preparing selected product for insert to PhotoViewer
+      let id = info.id;
+      let imagesSrc , filtered = [];
+
+            //        if any product doesn't selected in initial statement, we shouldn't set value of variables
+      if(id !== -1){
+        imagesSrc = this.importAll(require.context("./otherImages",false,/\.(png|jpe?g|svg)$/));
+        filtered = imagesSrc.filter((img) => {return img.includes((id.toString() + "_"))});
+      }
+
+          //    when a product is selected and we don't have any pictures of it we display this message(warning) = "عکسی برای کالا موجود نیست!"   //
+      if(filtered.length == 0 && info.id !== -1){
+        wrng = "تصویری برای کالا موجود نیست!";
+      }
 
     return(
       <div className="art-detail">
-        <img src={info.img} className="art-detail-img" />
-        {/*<PhotoViewer pId={0}/>*/}
+        {/* <img src={info.img} className="art-detail-img" /> */}
+        <PhotoViewer targetName={info.name} productsImages={filtered}/>
+        <h2>{wrng}</h2>
         <h3>
             {
               info.name
@@ -63,7 +78,9 @@ class ArtDetail extends React.Component
             {info.price}
         </h4>
         <p className="art-detail-sizes">
-              {info.sizes}
+              {
+                info.sizes
+              }
         </p>
         <p>
           {

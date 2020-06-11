@@ -61,7 +61,7 @@ class Home extends React.Component
 
     let columns = [ {
       title: "title",
-      url: "url",
+      url: "https://www.varzesh3.com/",
       description: "description",
       openExternal: true
     },

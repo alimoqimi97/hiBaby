@@ -12,7 +12,7 @@ const imgs = importAll(require.context("./allproducts",false,/\.(png|jpe?g|svg)$
 
 
 
-console.log("products length = " + Products.length);
+// console.log("products length = " + Products.length);
 
 // let Products =  [{
 // 	productName: "shalvar1",
@@ -50,7 +50,7 @@ class AllArticles extends React.Component
         img: "",
         name: "کالایی جهت مشاهده ی با جزییات بیشتر انتخاب نشده!",
         price: "",
-        id: 0,
+        id: -1,
         sizes: [""],
         colors: [],
         description: ""
@@ -69,10 +69,6 @@ class AllArticles extends React.Component
   render(){
 
     let articles = this.state.allProducts;
-
-    console.log(articles);
-
-
     let prdcs = [];
 
     for(let i = 0 ; i < imgs.length ; i++){
